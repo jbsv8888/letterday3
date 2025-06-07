@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Letter to Alliah</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+    }
+    .fade {
+      transition: opacity 1s ease, transform 1s ease;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 text-gray-800 flex items-center justify-center min-h-screen">
+  <!-- Envelope Container -->
+  <div id="envelope-container" class="flex flex-col items-center cursor-pointer fade">
+    <img src="https://cdn-icons-png.flaticon.com/512/561/561127.png" alt="Envelope" class="w-32 h-32 hover:scale-105 transition-transform duration-300" />
+    <p class="mt-4 text-lg text-gray-600">Click to open</p>
+  </div>
+
+  <!-- Letter Container (Hidden Initially) -->
+  <div id="letter-container" class="hidden max-w-3xl mx-auto p-6 bg-white shadow-xl rounded-xl fade opacity-0 transform translate-y-10">
+    <p class="text-xl mb-4">My Dearest Love,</p>
+
+    <p class="mb-4">I miss you—again and again, like a song stuck in my soul, playing over and over. I wonder how you are. How’s your heart these days? Are you still smiling the way I used to love seeing you smile? Because here I am, thinking of you every day, holding onto every memory like it was just yesterday.</p>
+
+    <p class="mb-4">There’s something I’ve been meaning to share with you. Earlier, my Lola looked at me and gently asked, “When are you going back to Manila?” And I just… couldn’t answer. Not a single word came out. Because when she asked that, my heart took me back to the first time you spoke to her. I remember that moment so vividly—it was simple, but unforgettable. You called me <em>seloso</em>, and she laughed so warmly. That laugh said everything. She knew. She knew how much I love you, how deeply I’m into you. Even she could feel it.</p>
+
+    <p class="mb-4">It’s funny how a single memory can hit so hard—how one question from Lola could bring back everything at once. You, me, that day, that laugh, your voice. And just like that, I felt the ache of missing you all over again.</p>
+
+    <p class="mb-4">Please, let me love you still—let me love you until my very last breath. I don’t care how long it takes, how far apart we are, or how many days, months, or years pass. My love for you doesn’t fade with time. It only grows deeper, stronger, more rooted in everything I do. And even if we find ourselves walking different roads for now, my heart never stopped choosing you.</p>
+
+    <p class="mb-4">I know life can be uncertain and distance can be heavy, but I carry you with me—in every decision, in every quiet moment, in every beat of my heart.</p>
+
+    <p class="mb-4">And… there’s one more thing. That jar of love you made for me (under your bed)—I’ve been thinking about it a lot. I hope you didn’t throw it away. I really hope you still have it, somewhere safe. That jar holds more than just pieces of paper. It holds parts of your heart, little pieces of our story, of your effort and love for me. When I come back, I want to hold it in my hands again, open each note, read them one by one, over and over, like I’m reliving all the moments we’ve shared, feeling your presence even from far away.</p>
+
+    <p class="mb-4">I miss you so much, love. More than I can ever express. And I love you—I love you too much. With every piece of who I am, I love you.</p>
+
+    <p class="mb-4">Take care of yourself for me. I’m still here, still yours, still loving you.</p>
+
+    <p class="mt-8 text-sm text-right text-gray-400">Love, Lie</p>
+  </div>
+
+  <script>
+    const envelope = document.getElementById('envelope-container');
+    const letter = document.getElementById('letter-container');
+
+    envelope.addEventListener('click', () => {
+      envelope.classList.add('opacity-0');
+      setTimeout(() => {
+        envelope.classList.add('hidden');
+        letter.classList.remove('hidden');
+        setTimeout(() => {
+          letter.classList.add('opacity-100');
+          letter.classList.remove('translate-y-10');
+        }, 50);
+      }, 500);
+    });
+  </script>
+</body>
+</html>
